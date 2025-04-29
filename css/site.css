@@ -13,10 +13,16 @@
     min-height: 100vh;
     background: var(--bg);
     font-family: var(--font);
+
+
   }
 
   .titulo{
     margin: auto;
     margin-top: 1em;
+    color: #ffff;
+  }
+  
+  .contador{
     color: #ffff;
   }

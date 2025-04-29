@@ -1,46 +1,63 @@
-var grupoTarjetas = ["😎", "🍦", "🐸", "👽", "👾", "🤖", "👹", "🐌", "🙈", "🙉", "🐷", "🦍", "🐈‍⬛", "🏋️"];
+let grupoTarjetas = ["😎", "🍦", "🐸", "👽", "👾", "🤖", "👹", "🐌", "🙈", "🙉", "🐷", "🦍","😍","🍟"];
+let totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
-var totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
-
-//texto de prueba
-//holaaaa
-
+let primera = null;
+let segunda = null;
+let bloqueo = false;
 
 function barajaTarjetas() {
-  var resultado;
-  resultado = totalTarjetas.sort(function() {
-    return 0.5 - Math.random();
-  });
-  return resultado;
+  return totalTarjetas.sort(() => 0.5 - Math.random());
 }
 
 function reparteTarjetas() {
-  var mesa = document.querySelector("#mesa");
-  var tarjetasBarajadas = barajaTarjetas();
+  let mesa = document.querySelector("#mesa");
+  let tarjetasBarajadas = barajaTarjetas();
   mesa.innerHTML = "";
 
-  tarjetasBarajadas.forEach(function(elemento) {
-    var tarjeta = document.createElement("div");
+  tarjetasBarajadas.forEach(function (emoji) {
+    let tarjeta = document.createElement("div");
+    tarjeta.classList.add("tarjeta");
 
-    tarjeta.innerHTML =
-      "<div class='tarjeta'>" +
-      "<div class='tarjeta__contenido'>" +
-      elemento +
-      "</div>" +
-      "</div>";
+    let contenido = document.createElement("div");
+    contenido.classList.add("tarjeta__contenido");
+    contenido.textContent = emoji;
 
+    tarjeta.appendChild(contenido);
+    tarjeta.addEventListener("click", descubrir);
     mesa.appendChild(tarjeta);
   });
 }
 
 function descubrir() {
+  if (bloqueo || this.classList.contains("descubierta")) return;
+
   this.classList.add("descubierta");
+
+  if (!primera) {
+    primera = this;
+  } else {
+    segunda = this;
+    bloqueo = true;
+
+    let emoji1 = primera.querySelector(".tarjeta__contenido").textContent;
+    let emoji2 = segunda.querySelector(".tarjeta__contenido").textContent;
+    let contador = document.getElementById("count");
+
+    if (emoji1 === emoji2) {
+      primera = null;
+      segunda = null;
+      bloqueo = false;
+    } else {
+      setTimeout(() => {
+        primera.classList.remove("descubierta");
+        segunda.classList.remove("descubierta");
+        primera = null;
+        segunda = null;
+        bloqueo = false;
+        contador +=1;
+        contador.innerHTML(contador);
+      }, 1000);
+    }
+  }
 }
-
-
-
 reparteTarjetas();
-
-document.querySelectorAll(".tarjeta").forEach(function(elemento) {
-  elemento.addEventListener("click", descubrir);
-});

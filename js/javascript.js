@@ -4,6 +4,11 @@ let totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 let primera = null;
 let segunda = null;
 let bloqueo = false;
+let contador = 0;
+let spanContador = document.getElementById("count");
+let intentos = 0;
+let spanIntentos = document.getElementById("intentos");
+
 
 function barajaTarjetas() {
   return totalTarjetas.sort(() => 0.5 - Math.random());
@@ -29,7 +34,7 @@ function reparteTarjetas() {
 }
 
 function descubrir() {
-  if (bloqueo || this.classList.contains("descubierta")) return;
+  if (bloqueo) return;
 
   this.classList.add("descubierta");
 
@@ -41,12 +46,15 @@ function descubrir() {
 
     let emoji1 = primera.querySelector(".tarjeta__contenido").textContent;
     let emoji2 = segunda.querySelector(".tarjeta__contenido").textContent;
-    let contador = document.getElementById("count");
 
     if (emoji1 === emoji2) {
       primera = null;
       segunda = null;
       bloqueo = false;
+      contador++;
+      spanContador.textContent = contador;
+      intentos++;
+      spanIntentos.textContent = intentos;
     } else {
       setTimeout(() => {
         primera.classList.remove("descubierta");
@@ -54,10 +62,11 @@ function descubrir() {
         primera = null;
         segunda = null;
         bloqueo = false;
-        contador +=1;
-        contador.innerHTML(contador);
+        intentos++;
+        spanIntentos.textContent = intentos;
       }, 1000);
     }
   }
 }
+
 reparteTarjetas();

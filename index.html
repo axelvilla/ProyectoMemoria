@@ -7,20 +7,42 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- jsDelivr  -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+
+    <!-- UNPKG -->
+    <script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
+
     <title>Juego de memoria</title>
     <link
       href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:600"
       rel="stylesheet"
     />
-    
+
     <link href="css/site.css" rel="stylesheet" />
     <link href="css/4.css" rel="stylesheet" />
   </head>
 
   <body>
     <h1 class="titulo">Juego de memoria</h1>
-    <main><div id="mesa" class="mesa"></div></main>
-
+    <div id="timer" class="contador">
+      Tiempo: <span id="timeDisplay">0s</span>
+      <button onclick="startGame()" class="botonInicio">Iniciar Juego</button>
+      <button id="resetBtn" onclick="startGame()" style="display: none;">Reiniciar Juego</button>
+    </div>
+    
+    <main>
+      <div id="mesa" class="mesa"></div>
+    </main>
+    <div class="datos">
+      <p>Encontrados: <span id="count">0</span></p>
+      <p>Intentos: <span id="intentos">0</span></p>
+    </div>
     <script src="js/javascript.js"></script>
+    <script>
+      const container = document.querySelector(".fireworks");
+      const fireworks = new Fireworks.default(container);
+      fireworks.start();
+    </script>
   </body>
 </html>

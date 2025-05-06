@@ -13,10 +13,19 @@
     min-height: 100vh;
     background: var(--bg);
     font-family: var(--font);
+
+
   }
 
   .titulo{
     margin: auto;
-    margin-top: 1em;
+    margin-top: 0.5em;
     color: #ffff;
+  }
+  
+  .datos{
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 1em 0em 1em;
   }

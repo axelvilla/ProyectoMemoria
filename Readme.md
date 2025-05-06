@@ -3,7 +3,7 @@
 ##
 Este proyecto es un juego en el cual las personas deben de buscar un par de cartas iguales para ganar.
 
-![Captura de pantalla] ![alt text](JuegoOriginal.png)
+![alt text](JuegoOriginal-2.png)
 
 ##
 Esta función baraja las cartas para ponerlas en lugares aleatorios utilizando 
@@ -13,11 +13,7 @@ Math.random()
 
 ``` Javascript
 function barajaTarjetas() {
-  var resultado;
-  resultado = totalTarjetas.sort(function() {
-    return 0.5 - Math.random();
-  });
-  return resultado;
+  return totalTarjetas.sort(() => 0.5 - Math.random());
 }
 ```
 

@@ -30,3 +30,5 @@ El juego también muestra un contador de cuantos pares encontrados llevas y en c
 
 ## Intentos
 ![Captura de pantalla] ![alt text](image-5.png)
+
+## Como se gana

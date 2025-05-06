@@ -23,3 +23,11 @@ function barajaTarjetas() {
 
 ## Comparado a la imagen anterior, se puede ver que las tarjetas no se encuentran en el mismo lugar.
 ![Captura de pantalla ] ![alt text](image-1.png)
+
+
+## Decidimos cambiar el color del fondo por algo mas tranquilo y menos cansador para la vista y ademas guiandonos por la estetica agregamos 5 emojis nuevos "🙈", "🙉", "🐷", "🦍","😍","🍟"
+
+
+
+!![Captura de pantalla ] ![alt text](![alt text](ColorFondo.png)
+

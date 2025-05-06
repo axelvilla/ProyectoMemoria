@@ -23,6 +23,9 @@
     color: #ffff;
   }
   
-  .contador{
+  .datos{
     color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 1em 0em 1em;
   }

@@ -7,6 +7,12 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- jsDelivr  -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+
+    <!-- UNPKG -->
+    <script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
+
     <title>Juego de memoria</title>
     <link
       href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:600"
@@ -24,9 +30,15 @@
 
       </div>
     </main>
-      <div class="contador">
-        <p>Contador: <span id="count">0</span> </p>
+      <div class="datos">
+        <p>Encontrados: <span id="count">0</span> </p>
+        <p>Intentos: <span id="intentos">0</span></p>
       </div>
     <script src="js/javascript.js"></script>
+    <script>
+      const container = document.querySelector('.fireworks')
+      const fireworks = new Fireworks.default(container)
+      fireworks.start()
+    </script>
   </body>
 </html>

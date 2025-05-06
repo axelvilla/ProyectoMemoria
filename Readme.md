@@ -44,3 +44,23 @@ Al conseguir las 14 parejas el juego se da por finalizado
  Añadimos nuevos emojis
 
 "🙈", "🙉", "🐷", "🦍","😍","🍟"
+
+Se agrego un boton para inicar el videojuego
+
+
+![alt text](boton.png)
+
+
+Al inicar el tiempo empieza a transcurrir hasta que logres la victoria
+
+![alt text](tiempo.png)
+
+Luego de encontrar las 14 parejas posibles y ganar el juego, aparece aviso sobre la finalizacion del mismo y cuanto tiempo tardaste en lograrlo.
+
+![alt text](final.png)
+
+Por ultimo agregamos un boton de reinicio para que puedas volver a competir contra tus amigos
+
+![alt text](reiniciar.png)
+
+#Fin

@@ -3,6 +3,45 @@
 let grupoTarjetas = ["😎", "🍦", "🐸", "👽", "👾", "🤖", "👹", "🐌", "🙈", "🙉", "🐷", "🦍","😍","🍟"];
 let totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
+
+// Logica de reloj
+let time = 0;
+let timerInterval = null;
+
+// Funcion para iniciar el juego
+function startGame() {
+  document.getElementById("resetBtn").style.display = "none";
+
+  time = 0;
+  document.getElementById("timeDisplay").textContent = `0s`;
+
+  intentos = 0;
+  contador = 0;
+  spanIntentos.textContent = intentos;
+  spanContador.textContent = contador;
+
+  primera = null;
+  segunda = null;
+  bloqueo = false;
+
+  clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+    time++;
+    document.getElementById("timeDisplay").textContent = `${time}s`;
+  }, 1000);
+
+  reparteTarjetas();
+}
+
+
+//Funcion para detener el juego
+function stopGame() {
+  clearInterval(timerInterval);
+  alert(`¡Juego terminado! Tiempo total: ${time} segundos`);
+  document.getElementById("resetBtn").style.display = "inline-block"; // 👉 muestra el botón
+}
+
 let primera = null;
 let segunda = null;
 let bloqueo = false;
@@ -65,6 +104,10 @@ function descubrir() {
       spanContador.textContent = contador;
       intentos++;
       spanIntentos.textContent = intentos;
+
+      if (contador === grupoTarjetas.length) {
+        stopGame();
+      }
     } else {
       //Si el emoji 1 no es igual al emoji 2 no se agrega 1 numero mas al contador pero si a los intentos. Se quita la funcion de bloqueo en la tarjeta y se vuelven a dar vuelta luego de 1 segundo.
       setTimeout(() => {

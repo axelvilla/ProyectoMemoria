@@ -18,27 +18,31 @@
       href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:600"
       rel="stylesheet"
     />
-    
+
     <link href="css/site.css" rel="stylesheet" />
     <link href="css/4.css" rel="stylesheet" />
   </head>
 
   <body>
     <h1 class="titulo">Juego de memoria</h1>
+    <div id="timer" class="contador">
+      Tiempo: <span id="timeDisplay">0s</span>
+      <button onclick="startGame()" class="botonInicio">Iniciar Juego</button>
+      <button id="resetBtn" onclick="startGame()" style="display: none;">Reiniciar Juego</button>
+    </div>
+    
     <main>
-      <div id="mesa" class="mesa"> 
-
-      </div>
+      <div id="mesa" class="mesa"></div>
     </main>
-      <div class="datos">
-        <p>Encontrados: <span id="count">0</span> </p>
-        <p>Intentos: <span id="intentos">0</span></p>
-      </div>
+    <div class="datos">
+      <p>Encontrados: <span id="count">0</span></p>
+      <p>Intentos: <span id="intentos">0</span></p>
+    </div>
     <script src="js/javascript.js"></script>
     <script>
-      const container = document.querySelector('.fireworks')
-      const fireworks = new Fireworks.default(container)
-      fireworks.start()
+      const container = document.querySelector(".fireworks");
+      const fireworks = new Fireworks.default(container);
+      fireworks.start();
     </script>
   </body>
 </html>

@@ -59,3 +59,29 @@ body {
   .tarjeta.descubierta {
     transform: rotateY(-180deg);
   }
+
+.contador{
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+}
+
+.botonInicio{
+  margin: 1em 0em 1em 0em;
+  padding: 1em;
+  font-size: 0.5em;
+  border-radius: 10px;
+  background-color: rgb(67, 174, 67);
+  color: #fff;
+}
+
+#resetBtn{
+  margin: 1em 0em 1em 0em;
+  padding: 1em;
+  font-size: 0.5em;
+  border-radius: 10px;
+  background-color: rgb(66, 66, 201);
+  color: #fff;
+}
